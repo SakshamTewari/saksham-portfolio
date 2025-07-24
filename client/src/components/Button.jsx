@@ -6,8 +6,10 @@ const Button = ({ text, className, id }) => {
             e.preventDefault()
         }} className={`${className ?? ""} cta-wrapper`}>
             <div className='cta-button group'>
-                <div className='bg-circle'>
-                    <p className='text'>{text}</p><div className='arrow-wrapper'><img src="/images/arrow-down.svg" alt="arro" /></div>
+                <div className='bg-circle' />
+                <p className='text'>{text}</p>
+                <div className='arrow-wrapper'>
+                    <img src="/images/arrow-down.svg" alt="arro" />
                 </div>
             </div></a >
     )
