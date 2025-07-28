@@ -28,6 +28,24 @@ const words = [
   { text: 'Code', imgPath: '/images/code.svg' },
 ];
 
+const skills = [
+  'JavaScript',
+  'TypeScript',
+  'React',
+  'Node.js',
+  'Figma',
+  'Next.js',
+  'MongoDB',
+  'Docker',
+  'Tailwind',
+  'Framer Motion',
+  'Git',
+  'GraphQL',
+  'Prisma',
+  'HTML',
+  'CSS',
+];
+
 const counterItems = [
   { value: 15, suffix: '+', label: 'Years of Experience' },
   { value: 200, suffix: '+', label: 'Satisfied Clients' },
@@ -268,6 +286,7 @@ const socialImgs = [
 
 export {
   words,
+  skills,
   abilities,
   logoIconsList,
   counterItems,
