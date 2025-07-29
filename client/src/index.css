@@ -3,8 +3,11 @@
 
 :root {
   --gradient: radial-gradient(circle, #e5e5e5 0%, #fff 100%);
+  --font-body: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 @theme {
+  --color-white: #ffffff;
   --color-white-50: #d9ecff;
   --color-black-200: #282732;
 }
@@ -13,14 +16,13 @@ html,
 body {
   width: 100vw;
   overflow-x: hidden;
-  background-color: black;
+  background-color: #0e0e0f;
   color: white;
   scroll-behavior: smooth;
-  font-family: 'Mona Sans', sans-serif;
 }
 
 section {
-  width: 100dvw;
+  width: 100%;
 }
 
 .slide {
@@ -36,7 +38,7 @@ section {
 }
 
 .typing-container {
-  animation: loop 8s linear infinite;
+  animation: loop 20s linear infinite;
 }
 
 .typing-text {
@@ -51,61 +53,19 @@ section {
   white-space: nowrap;
   border-right: 2px solid white;
   width: 0;
-  animation: type-and-erase 10s steps(20, end) infinite;
+  animation: type-and-erase 12s steps(17, end) infinite;
 }
 
-@keyframes type-and-erase {
-  10% {
-    width: 0ch;
-    border-color: white;
-  }
-  40% {
-    width: 16ch;
-    border-color: white;
-  }
-  50% {
-    width: 16ch;
-    border-color: transparent;
-  }
-  70% {
-    width: 16ch;
-    border-color: white;
-  }
-  80% {
-    width: 16ch;
-    border-color: transparent;
-  }
-  100% {
-    width: 0ch;
-    border-color: transparent;
-  }
+.spin-text {
+  animation: spin-text 10s linear infinite;
 }
 
-@keyframes wordSlider {
-  0% {
-    transform: translateY(0.5%);
-  }
-  12.5% {
-    transform: translateY(-12.5%);
-  }
-  25% {
-    transform: translateY(-25%);
-  }
-  37.5% {
-    transform: translateY(-37.5%);
-  }
-  50% {
-    transform: translateY(-50%);
-  }
-  62.5% {
-    transform: translateY(-62.5%);
-  }
-  75% {
-    transform: translateY(-75%);
-  }
-  87.5% {
-    transform: translateY(-87.5%);
-  }
+.spin-flower-anticlockwise {
+  animation: spin-anticlockwise 8s linear infinite;
+}
+
+.spin-flower-clockwise {
+  animation: spin-clockwise 8s linear infinite;
 }
 
 @layer utilities {
@@ -118,11 +78,20 @@ section {
 }
 
 @layer components {
+  .hero-left-section {
+    @apply relative flex flex-col justify-evenly h-full w-[80%] m-1;
+  }
+  .hero-right-section {
+    @apply relative flex flex-col justify-evenly h-full w-[20%] m-1;
+  }
   .hero-top-left {
     @apply inline-block absolute top-4 left-6 z-50  text-lg md:text-2xl text-white tracking-wide select-none pointer-events-none;
   }
+  .hero-top-right {
+    @apply absolute top-4 right-6 z-50 text-lg md:text-2xl text-white select-none cursor-pointer;
+  }
 
-  .hero-layout {
+  .hero-middle-layout {
     @apply relative z-10 xl:mt-20 mt-32 md:h-dvh h-[80vh] flex xl:items-center items-start justify-center;
   }
   .hero-text {
@@ -152,7 +121,7 @@ section {
   }
 
   .cta-button {
-    @apply px-4 py-4 rounded-lg bg-black-200 flex justify-center items-center relative cursor-pointer overflow-hidden  transition-all duration-300 ease-in-out;
+    @apply px-4 py-4  bg-black-200 flex justify-center items-center relative cursor-pointer overflow-hidden  transition-all duration-300 ease-in-out;
 
     .bg-circle {
       @apply absolute -right-10 origin-center top-1/2 -translate-y-1/2 
@@ -161,7 +130,7 @@ section {
     }
 
     .text {
-      @apply uppercase md:text-lg font-bold text-white transition-all duration-500 group-hover:text-white-50 group-hover:-translate-x-5 xl:translate-x-0 -translate-x-5;
+      @apply uppercase md:text-lg font-normal text-white transition-all duration-500 group-hover:text-white-50 group-hover:-translate-x-5 xl:translate-x-0 -translate-x-5;
     }
 
     .arrow-wrapper {
@@ -172,7 +141,113 @@ section {
       }
     }
   }
+  .work-with-me {
+    @apply inline-flex flex-col  items-center px-2  transition-all duration-300 hover:bg-white/10;
+  }
+}
 
-  .rotate-wrapper {
+@keyframes type-and-erase {
+  0%,
+  2% {
+    width: 0ch;
+    border-color: white;
+  }
+
+  26% {
+    width: 17ch;
+    border-color: white;
+  }
+
+  28% {
+    width: 17ch;
+    border-color: white;
+  }
+
+  44% {
+    border-color: transparent;
+    width: 17ch;
+  }
+
+  60% {
+    width: 17ch;
+    border-color: white;
+  }
+
+  84% {
+    width: 0ch;
+    border-color: white;
+  }
+
+  86% {
+    width: 0ch;
+    border-color: white;
+  }
+  92% {
+    width: 0ch;
+    border-color: transparent;
+  }
+
+  100% {
+    width: 0ch;
+    border-color: white;
+  }
+}
+
+@keyframes wordSlider {
+  0% {
+    transform: translateY(0.5%);
+  }
+  12.5% {
+    transform: translateY(-12.5%);
+  }
+  25% {
+    transform: translateY(-25%);
+  }
+  37.5% {
+    transform: translateY(-37.5%);
+  }
+  50% {
+    transform: translateY(-50%);
+  }
+  62.5% {
+    transform: translateY(-62.5%);
+  }
+  75% {
+    transform: translateY(-75%);
+  }
+  87.5% {
+    transform: translateY(-87.5%);
+  }
+}
+@keyframes spin-text {
+  from {
+    transform: rotate(0deg);
+    transform-origin: center;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: center;
+  }
+}
+
+@keyframes spin-anticlockwise {
+  from {
+    transform: rotate(0deg);
+    transform-origin: center;
+  }
+  to {
+    transform: rotate(-360deg);
+    transform-origin: center;
+  }
+}
+
+@keyframes spin-clockwise {
+  from {
+    transform: rotate(0deg);
+    transform-origin: center;
+  }
+  to {
+    transform: rotate(360deg);
+    transform-origin: center;
   }
 }
