@@ -1,10 +1,11 @@
 import React from 'react'
+import RotatingFlower from './RotatingFlower'
 
 const ScrollRing = () => {
     return (
         <>
             <div className="w-[150px] h-[150px] flex items-center justify-center relative">
-                <svg height="150" width="150" viewBox="0 0 150 150" className='fill-[var(--color-white-50)]'>
+                <svg height="120" width="120" viewBox="0 0 150 150" className='fill-[var(--color-white)]'>
                     <defs>
                         <path
                             id="circlePath"
@@ -14,15 +15,13 @@ const ScrollRing = () => {
                     </defs>
 
                     <g className="spin-text origin-center">
-                        <text className="  fill-[var(--color-white-50)]" fontSize='10' letterSpacing='18'>
-                            <textPath href="#circlePath" startOffset="0%" textLength='314' lengthAdjust='spacing'>SCROLL DOWN SCROLL DOWN</textPath>
+                        <text className="  fill-[var(--color-black-100)]" fontSize='14' letterSpacing='18' fontWeight='bold' textRendering="geometricPrecision"
+                            shapeRendering="geometricPrecision" >
+                            <textPath href="#circlePath" startOffset="0%" textLength='314' lengthAdjust='spacing' >SCROLL DOWN SCROLL DOWN</textPath>
                         </text>
                     </g>
                 </svg>
-                {/* Asterisk icon in center */}
-                <span className="absolute h-[16px] w-[16px] fill-[var(--color-white-50)] filter invert">
-                    <img src="/images/flower-2.svg" alt="" className='spin-flower' />
-                </span>
+                <RotatingFlower src="/images/flower-2.svg" className={'absolute'} direction={'anticlockwise'} />
             </div>
 
         </>
