@@ -1,14 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://db.onlinewebfonts.com/c/926fcaaa8b66e0df67e176f329259711?family=PP+Editorial+New');
 @import 'tailwindcss';
 
 :root {
   --gradient: radial-gradient(circle, #e5e5e5 0%, #fff 100%);
-  --font-body: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-body: 'PP Editorial New', serif !important;
 }
+@font-face {
+  font-family: 'PP Editorial New';
+  src: url('/fonts/PPEditorialNew-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @theme {
   --color-white: #ffffff;
   --color-white-50: #d9ecff;
+  --color-black-100: #3f3b37;
   --color-black-200: #282732;
 }
 
@@ -17,7 +24,7 @@ body {
   width: 100vw;
   overflow-x: hidden;
   background-color: #0e0e0f;
-  color: white;
+  color: #3f3b37;
   scroll-behavior: smooth;
 }
 
@@ -38,22 +45,17 @@ section {
 }
 
 .typing-container {
-  animation: loop 20s linear infinite;
-}
-
-.typing-text {
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid white;
-  width: 0;
+  animation: loop 4 linear infinite;
 }
 
 .typing-loop {
   overflow: hidden;
   white-space: nowrap;
-  border-right: 2px solid white;
+  border-right: 2px solid #3f3b37;
+  font-weight: bold;
+  font-size: clamp(1.5rem, 6vw, 2.25rem);
   width: 0;
-  animation: type-and-erase 12s steps(17, end) infinite;
+  animation: type-and-erase 4s steps(8, end) infinite;
 }
 
 .spin-text {
@@ -106,14 +108,10 @@ section {
     @apply flex flex-row justify-end;
   }
   .social-media {
-    @apply flex flex-col justify-evenly gap-7 py-4;
+    @apply flex justify-center py-6;
 
     a {
-      @apply size-3 md:size-6  object-contain;
-    }
-
-    img {
-      @apply invert gap-2.5;
+      @apply size-4 md:size-6 mx-2;
     }
   }
 
@@ -169,50 +167,31 @@ section {
   }
 }
 
-@keyframes type-and-erase {
+@keyframes blink {
   0%,
-  2% {
-    width: 0ch;
-    border-color: white;
-  }
-
-  26% {
-    width: 17ch;
-    border-color: white;
-  }
-
-  28% {
-    width: 17ch;
-    border-color: white;
-  }
-
-  44% {
-    border-color: transparent;
-    width: 17ch;
-  }
-
-  60% {
-    width: 17ch;
-    border-color: white;
-  }
-
-  84% {
-    width: 0ch;
-    border-color: white;
-  }
-
-  86% {
-    width: 0ch;
-    border-color: white;
-  }
-  92% {
-    width: 0ch;
-    border-color: transparent;
-  }
-
   100% {
-    width: 0ch;
-    border-color: white;
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes type-and-erase {
+  0% {
+    width: 0;
+  }
+  20% {
+    width: 8ch;
+  }
+  60% {
+    width: 8ch;
+  }
+  80% {
+    width: 0;
+  }
+  100% {
+    width: 0;
   }
 }
 
@@ -242,6 +221,7 @@ section {
     transform: translateY(-87.5%);
   }
 }
+
 @keyframes spin-text {
   from {
     transform: rotate(0deg);
@@ -273,4 +253,26 @@ section {
     transform: rotate(360deg);
     transform-origin: center;
   }
+}
+
+.line {
+  color: #3f3b37;
+  display: block;
+  translate: none;
+  rotate: none;
+  scale: none;
+  transform: translate3d(0px, 0px, 0px);
+  border-bottom: 1px solid;
+  margin: auto;
+  width: 95%;
+}
+
+.container {
+  perspective: 600px;
+}
+
+.card {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
