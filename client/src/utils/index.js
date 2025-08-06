@@ -18,116 +18,53 @@ const navLinks = [
 ];
 
 const words = [
-  { text: 'Ideas', imgPath: '/images/ideas.svg' },
   { text: 'Concepts', imgPath: '/images/concepts.svg' },
   { text: 'Designs', imgPath: '/images/designs.svg' },
   { text: 'Code', imgPath: '/images/code.svg' },
-  { text: 'Ideas', imgPath: '/images/ideas.svg' },
   { text: 'Concepts', imgPath: '/images/concepts.svg' },
   { text: 'Designs', imgPath: '/images/designs.svg' },
   { text: 'Code', imgPath: '/images/code.svg' },
+];
+
+const socials = [
+  {
+    name: 'Instagram',
+    imgPath: '/images/instagram.svg',
+    link: '',
+  },
+  {
+    name: 'X',
+    imgPath: '/images/x.svg',
+    link: '',
+  },
+  {
+    name: 'Linkedin',
+    imgPath: '/images/linkedin.svg',
+    link: '',
+  },
+  {
+    name: 'Github',
+    imgPath: '/images/github.svg',
+    link: '',
+  },
+  {
+    name: 'Quora',
+    imgPath: '/images/quora.svg',
+    link: '',
+  },
 ];
 
 const skills = [
-  'JavaScript',
-  'TypeScript',
-  'React',
-  'Node.js',
-  'Figma',
-  'Next.js',
-  'MongoDB',
-  'Docker',
-  'Tailwind',
-  'Framer Motion',
-  'Git',
-  'GraphQL',
-  'Prisma',
-  'HTML',
-  'CSS',
-];
-
-const counterItems = [
-  { value: 15, suffix: '+', label: 'Years of Experience' },
-  { value: 200, suffix: '+', label: 'Satisfied Clients' },
-  { value: 108, suffix: '+', label: 'Completed Projects' },
-  { value: 90, suffix: '%', label: 'Client Retention Rate' },
-];
-
-const logoIconsList = [
-  {
-    imgPath: '/images/logos/company-logo-1.png',
-  },
-  {
-    imgPath: '/images/logos/company-logo-2.png',
-  },
-  {
-    imgPath: '/images/logos/company-logo-3.png',
-  },
-  {
-    imgPath: '/images/logos/company-logo-4.png',
-  },
-  {
-    imgPath: '/images/logos/company-logo-5.png',
-  },
-  {
-    imgPath: '/images/logos/company-logo-6.png',
-  },
-  {
-    imgPath: '/images/logos/company-logo-7.png',
-  },
-  {
-    imgPath: '/images/logos/company-logo-8.png',
-  },
-  {
-    imgPath: '/images/logos/company-logo-9.png',
-  },
-  {
-    imgPath: '/images/logos/company-logo-10.png',
-  },
-  {
-    imgPath: '/images/logos/company-logo-11.png',
-  },
-];
-
-const abilities = [
-  {
-    imgPath: '/images/seo.png',
-    title: 'Quality Focus',
-    desc: 'Delivering high-quality results while maintaining attention to every detail.',
-  },
-  {
-    imgPath: '/images/chat.png',
-    title: 'Reliable Communication',
-    desc: 'Keeping you updated at every step to ensure transparency and clarity.',
-  },
-  {
-    imgPath: '/images/time.png',
-    title: 'On-Time Delivery',
-    desc: 'Making sure projects are completed on schedule, with quality & attention to detail.',
-  },
-];
-
-const techStackImgs = [
-  {
-    name: 'React Developer',
-    imgPath: '/images/logos/react.png',
-  },
-  {
-    name: 'Python Developer',
-    imgPath: '/images/logos/python.svg',
-  },
-  {
-    name: 'Backend Developer',
-    imgPath: '/images/logos/node.png',
-  },
-  {
-    name: 'Interactive Developer',
-    imgPath: '/images/logos/three.png',
-  },
-  {
-    name: 'Project Manager',
-    imgPath: '/images/logos/git.svg',
-  },
+  { path: '/images/javascript.svg', name: 'JavaScript' },
+  { path: '/images/typescript.svg', name: 'TypeScript' },
+  { path: '/images/react.svg', name: 'React' },
+  { path: '/images/nodejs.svg', name: 'Node.js' },
+  { path: '/images/figma.svg', name: 'Figma' },
+  { path: '/images/mongodb.svg', name: 'MongoDB' },
+  { path: '/images/docker.svg', name: 'Docker' },
+  { path: '/images/tailwind.svg', name: 'Tailwind CSS' },
+  { path: '/images/git.svg', name: 'Git' },
+  { path: '/images/graphql.svg', name: 'GraphQL' },
 ];
 
 const techStackIcons = [
@@ -205,21 +142,6 @@ const expCards = [
   },
 ];
 
-const expLogos = [
-  {
-    name: 'logo1',
-    imgPath: '/images/logo1.png',
-  },
-  {
-    name: 'logo2',
-    imgPath: '/images/logo2.png',
-  },
-  {
-    name: 'logo3',
-    imgPath: '/images/logo3.png',
-  },
-];
-
 const testimonials = [
   {
     name: 'Esther Howard',
@@ -265,36 +187,12 @@ const testimonials = [
   },
 ];
 
-const socialImgs = [
-  {
-    name: 'insta',
-    imgPath: '/images/insta.png',
-  },
-  {
-    name: 'fb',
-    imgPath: '/images/fb.png',
-  },
-  {
-    name: 'x',
-    imgPath: '/images/x.png',
-  },
-  {
-    name: 'linkedin',
-    imgPath: '/images/linkedin.png',
-  },
-];
-
 export {
   words,
   skills,
-  abilities,
-  logoIconsList,
-  counterItems,
   expCards,
-  expLogos,
   testimonials,
-  socialImgs,
+  socials,
   techStackIcons,
-  techStackImgs,
   navLinks,
 };
