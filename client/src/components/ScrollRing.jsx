@@ -4,7 +4,7 @@ import RotatingFlower from './RotatingFlower'
 const ScrollRing = () => {
     return (
         <>
-            <div className="w-[150px] h-[150px] flex items-center justify-center relative">
+            <div className="w-[75px] h-[75px] md:w-[150px] md:h-[150px] flex items-center justify-center relative">
                 <svg height="120" width="120" viewBox="0 0 150 150" className='fill-[var(--color-white)]'>
                     <defs>
                         <path
