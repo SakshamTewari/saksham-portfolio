@@ -4,7 +4,7 @@ const Accordion = ({ items }) => {
     const [openId, setOpenId] = useState(null);
 
     return (
-        <div className='max-w-2xl mx-auto'>
+        <div className='w-full max-w-2xl mx-auto my-2'>
             {items.map((item) => (
                 <AccordionItem key={item.id} item={item} isOpen={item.id === openId} onClick={() => setOpenId(openId === item.id ? null : item.id)} />
             ))}
@@ -14,15 +14,18 @@ const Accordion = ({ items }) => {
 
 const AccordionItem = ({ item, isOpen, onClick }) => {
     return (
-        <div className='border-b'>
+        <div className='border-b border-[var(--color-cream-light)] bg-black px-5 rounded-2xl my-2 '>
             <button onClick={onClick} className='w-full text-left py-2'>
-                <div className='flex justify-between items-center'>
-                    <div>
-                        <span className='font-semibold'>{item.title}</span>
-                    </div>
-                    <div>
-                        <span className='font-semibold'>{item.date}</span>
-                        <span className='font-semibold'>{isOpen ? '-' : '+'}</span>
+                <div className='flex justify-between items-center '>
+                    {/* Title */}
+
+                    <span className='font-semibold text-[var(--color-cream-light)] px-5'>{item.title}</span>
+
+
+                    {/* Date and Icon */}
+                    <div className='flex items-center justify-between px-2'>
+                        <span className='font-semibold text-[var(--color-cream-light)]'>{item.date}</span>
+                        <span className='font-semibold text-[var(--color-cream-light)] px-4'>{isOpen ? '-' : '+'}</span>
                     </div>
 
                 </div>
