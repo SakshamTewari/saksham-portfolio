@@ -14,12 +14,12 @@ const Accordion = ({ items }) => {
 
 const AccordionItem = ({ item, isOpen, onClick }) => {
     return (
-        <div className='border-b border-[var(--color-cream-light)] bg-black px-5 rounded-2xl my-2 '>
-            <button onClick={onClick} className='w-full text-left py-2'>
-                <div className='flex justify-between items-center '>
+        <div className=' bg-black px-5 rounded-2xl my-2 '>
+            <button onClick={onClick} className='w-full py-2'>
+                <div className='flex justify-between'>
                     {/* Title */}
 
-                    <span className='font-semibold text-[var(--color-cream-light)] px-5'>{item.title}</span>
+                    <span className='font-semibold text-[var(--color-cream-light)]'>{item.title}</span>
 
 
                     {/* Date and Icon */}
@@ -32,14 +32,19 @@ const AccordionItem = ({ item, isOpen, onClick }) => {
             </button>
             {
                 isOpen && (
-                    <div className='flex flex-col justify-between items-center'>
-                        <div className='flex justify-items-start items-center'>
-                            <div>{item.location}</div>
-                            <div>{item.companyLink}</div>
+                    <div className='flex flex-col justify-between '>
+                        <div className='flex gap-8 justify-start '>
+                            <div className='text-[var(--color-cream-light)]'>{item.location}</div>
+                            <div className='text-[var(--color-cream-light)]'>{item.companyLink}</div>
                         </div>
                         <div className='flex justify-between'>
-                            <div>{item.responsibilities}</div>
-                            <div>{item.logoPath}</div>
+                            <div className='text-[var(--color-cream-light)]'>{item.responsibilities}</div>
+                            <div className='text-[var(--color-cream-light)]'><img
+                                src={item.logoPath}
+                                alt={`${item.companyName} logo`}
+                                className="h-full w-200"
+                            />
+                            </div>
                         </div>
 
                     </div>
