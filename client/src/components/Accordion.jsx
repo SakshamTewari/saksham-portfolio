@@ -34,8 +34,8 @@ const AccordionItem = ({ item, isOpen, onClick }) => {
                 isOpen && (
                     <div className='flex flex-col justify-between '>
                         <div className='flex gap-8 justify-start '>
-                            <div className='text-[var(--color-cream-light)]'>{item.location}</div>
-                            <div className='text-[var(--color-cream-light)]'>{item.companyLink}</div>
+                            <div className='text-[var(--color-cream-light)] flex gap-2 items-center'><img src="images/location.svg" alt="location" className='h-5 w-5 invert' /><span>{item.location}</span></div>
+                            <div className='text-[var(--color-cream-light)] flex gap-2 items-center'><img src="images/link.svg" alt="location" className='h-5 w-5 invert' /><span>{item.companyLink}</span></div>
                         </div>
                         <div className='flex justify-between'>
                             <div className='text-[var(--color-cream-light)]'>{item.responsibilities}</div>
