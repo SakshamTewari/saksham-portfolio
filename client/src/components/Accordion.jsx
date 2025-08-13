@@ -38,11 +38,19 @@ const AccordionItem = ({ item, isOpen, onClick }) => {
                             <div className='text-[var(--color-cream-light)] flex gap-2 items-center'><img src="images/link.svg" alt="location" className='h-5 w-5 invert' /><span>{item.companyLink}</span></div>
                         </div>
                         <div className='flex justify-between'>
-                            <div className='text-[var(--color-cream-light)]'>{item.responsibilities}</div>
-                            <div className='text-[var(--color-cream-light)]'><img
+                            <div className='flex flex-col gap-2 w-[75%]'>
+                                <div className='text-[var(--color-cream-light)]'>{item.responsibilities}</div>
+                                <div className='flex flex-wrap gap-2 items-center'>
+                                    {item.skillsUsed.map((skill, index) => (
+                                        <span key={index} className='text-[var(--color-cream-light)] bg-[var(--color-black-90)] z-[10] rounded-lg px-2'>{skill}</span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className='flex justify-center items-center w-[25%]'><img
                                 src={item.logoPath}
                                 alt={`${item.companyName} logo`}
-                                className="h-full w-200"
+                                className="h-50 w-full object-contain"
                             />
                             </div>
                         </div>
