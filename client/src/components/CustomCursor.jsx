@@ -9,23 +9,23 @@ const CustomCursor = () => {
         const dot = dotRef.current;
         const ring = ringRef.current;
 
-        let mouseX = 0;
-        let mouseY = 0;
+        gsap.set([dot, ring], {
+            xPercent: -50,
+            yPercent: -50,
+        })
 
         const onMouseMove = (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
 
             gsap.to(dot, {
-                x: mouseX,
-                y: mouseY,
+                x: e.clientX,
+                y: e.clientY,
                 duration: 0.1,
                 ease: 'power3.out'
             });
             gsap.to(ring, {
-                x: mouseX,
-                y: mouseY,
-                duration: 0,
+                x: e.clientX,
+                y: e.clientY,
+                duration: 0.25,
                 ease: 'power3.out',
             });
         }
@@ -40,7 +40,7 @@ const CustomCursor = () => {
 
             <div
                 ref={ringRef}
-                className="fixed top-0 left-0 w-8 h-8 border border-white rounded-full pointer-events-none z-[9999] transition-all"
+                className="fixed top-0 left-0 w-8 h-8 border border-[var(--color-black)] rounded-full pointer-events-none z-[9999]"
             /></>
     )
 }
